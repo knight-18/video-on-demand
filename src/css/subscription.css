@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700|Raleway:400,500");
+
+.container {
+  padding-top: 55px;
+  /* margin: 10px 20px; */
+  background-color: #edecea;
+  box-shadow: 0 0 40px #000;
+  height: 100vh;
+}
+/* HEADER */
+.header {
+  margin-left: 70px;
+}
+.header h1 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #474949;
+}
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+p {
+  font-family: "Montserrat", sans-serif;
+  color: #5b5e5e;
+  font-size: 14px;
+  width: 60%;
+  line-height: 30px;
+}
+
+/* SIGNUP  */
+.signup {
+  margin-top: 50px;
+  margin-bottom: 65px;
+  margin-left: 70px;
+  transition: 1s ease;
+}
+.signup img {
+  width: 22px;
+}
+.google,
+.fb,
+.twitter {
+  padding: 23px 30px;
+  margin-bottom: 30px;
+  width: 55%;
+  background-color: #d7dddd;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #858989;
+}
+.signup a {
+  text-decoration: none;
+  margin-left: 120px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3b3d3d;
+  text-transform: uppercase;
+  position: relative;
+  top: -3px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  border-top: 1px solid #969b9b;
+}
+
+.footer p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  float: left;
+  width: 30%;
+  margin-top: 12px;
+  margin-left: 65px;
+}
+.footer a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: #1c1c1c;
+  font-size: 15px;
+  float: right;
+  margin-right: 315px;
+  margin-top: 18px;
+}
+.side {
+  height: 685px;
+  width: 200px;
+  background: url("https://unsplash.it/200/688?image=898");
+  float: right;
+  position: relative;
+  top: -663px;
+}

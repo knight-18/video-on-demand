@@ -62,7 +62,9 @@ export default function ShortVideoPlayerModal({
       LastEvaluatedKey: lastVideo,
     };
     let data = await getShortVideo(reqParams);
-    if (data.Items.length === 0) {
+    if (data.Items.length === 0 || !data.Items[0].destinationBucketFilePath) {
+      console.log("returning for getnext video")
+      setIsLoading(false);
       return;
     }
     await isVideoLiked(data.Items[0].id);

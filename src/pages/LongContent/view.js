@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import {
   Grid,
-  Typography,
   Select,
   MenuItem,
   Backdrop,
   CircularProgress,
 } from "@mui/material";
-import { Button } from "@aws-amplify/ui-react";
 import defaultLanguages from "../../utils/config/language";
 import defaultGenres from "../../utils/config/genres";
 import { getLongVideos, fetchOpensearch } from "../../utils/api";
@@ -118,7 +116,7 @@ export default function View({ user }) {
     let endIndex = startingIndex + MAX_VIDEOS_ON_PAGE;
     setCurrentVideoList(videoList.slice(startingIndex, endIndex));
     setPage((page) => page - 1);
-    if (page == 2) setIsPrevEnabled(false);
+    if (page === 2) setIsPrevEnabled(false);
   };
 
   useEffect(() => {
@@ -127,7 +125,6 @@ export default function View({ user }) {
 
   return (
     <>
-      
       <div
         style={{
           WebkitFontSmoothing: "antialiased",
@@ -194,6 +191,7 @@ export default function View({ user }) {
           textAlign="center"
           alignItems="center"
           justifyContent="space-evenly"
+          mb={3}
         >
           {/* <Grid item md={6} sm={6}>
             <Button>
@@ -257,7 +255,7 @@ export default function View({ user }) {
               );
             })}
         </Grid>
-        <Grid container mt={2} pb={2}>
+        {/* <Grid container mt={2} pb={2}>
           <Grid
             item
             md={12}
@@ -280,7 +278,7 @@ export default function View({ user }) {
               </Button>
             )}
           </Grid>
-        </Grid>
+        </Grid> */}
       </div>
       <Footer />
     </>

@@ -31,8 +31,10 @@ export default function View({ singOut, user }) {
   const [about, setAbout] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
+  const [uploadError, setUploadError] = useState(null);
   useEffect(() => {}, []);
   const handleInputChange = (e) => {
+    setUploadError(null);
     setFileName(e.target.files[0].name);
     setFileData(e.target.files[0]);
     setFiletype(e.target.files[0].type);
@@ -54,7 +56,24 @@ export default function View({ singOut, user }) {
     setIsPremium((isPremium) => !isPremium);
   };
   const uploadVideo = async () => {
+    if (
+      !fileName ||
+      !fileData ||
+      !filetype ||
+      !title ||
+      !genre ||
+      !language ||
+      !about
+    ) {
+      setUploadError("Invalid Input");
+      return;
+    }
+    if (about.length > 200) {
+      setUploadError("About field must be less than 200 Characters.");
+      return;
+    }
     setIsUploading(true);
+
     let fileId = uuidv4();
 
     const res = await uploadFile(
@@ -81,7 +100,7 @@ export default function View({ singOut, user }) {
       language: language,
       createdAt: Date.now(),
       isDeleted: false,
-      isPremium
+      isPremium,
     });
     console.log("Request Body: ", reqBody);
     await onLongVideoUpload(reqBody);
@@ -121,6 +140,7 @@ export default function View({ singOut, user }) {
         justifyContent="center"
         textAlign="center"
         alignItems="center"
+        height="100vh"
       >
         <h2>Upload Video</h2>
         <div style={{ margin: "10px" }}>
@@ -206,6 +226,7 @@ export default function View({ singOut, user }) {
             className="uploadlogo"
           />
         </div>
+        {uploadError && <p style={{ color: "red" }}>{uploadError}</p>}
 
         <Button
           onClick={uploadVideo}
@@ -217,7 +238,7 @@ export default function View({ singOut, user }) {
           Upload
         </Button>
       </Grid>
-      <div style={{ position: "absolute", left: "0", right: "0", bottom: "0" }}>
+      <div style={{ position: "absolute", left: "0", right: "0" }}>
         <Footer />
       </div>
     </div>

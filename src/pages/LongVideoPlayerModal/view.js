@@ -97,7 +97,7 @@ export default function View({ user }) {
             </Grid>
             <Grid item>
               <Typography variant="p" color="#818181" fontSize="12px" p={2}>
-                2h 49min / {video.language} / {video.genres.join(",")}
+                {video.language} / {video.genres.join(",")}
               </Typography>
             </Grid>
             <Grid item alignItems="center">

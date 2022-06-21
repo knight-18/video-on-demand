@@ -47,7 +47,9 @@ const ContentCard = ({ video }) => {
             </Typography>
             <br />
             <Typography variant="p" color="#818181" fontSize="12px">
-              {video.about}
+              {video.title.length > 20
+                ? `${video.about.slice(0, 100)}...`
+                : video.about}
             </Typography>
           </Grid>
 

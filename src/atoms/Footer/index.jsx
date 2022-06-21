@@ -20,9 +20,9 @@ const Footer = () => {
             Home
           </a>
 
-          <a href="/short-content">Short Content</a>
+          {/* <a href="/short-content">Short Content</a>
 
-          <a href="/long-content">Long Content</a>
+          <a href="/long-content">Long Content</a> */}
         </p>
 
         <p>VOD &copy; 2022</p>

@@ -101,7 +101,7 @@ const Banner = ({ user }) => {
             <div id="box1" className="box blurred-bg tinted">
               <div className="content">
                 <Typography variant="h3" fontWeight="bold">
-                  Social Media Streaming
+                  Social Media Video
                 </Typography>
               </div>
             </div>

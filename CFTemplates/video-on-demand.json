@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Deploys API layer of the solutions along with the database tables.",
+    "Description": "Deploys the resources for Media Streaming Platform on AWS",
     "Mappings": {
         "Send": {
             "AnonymousUsage": {
@@ -1954,7 +1954,7 @@
                 "Timeout": 30,
                 "Environment": {
                     "Variables": {
-                        "DB_LONG_VIDEO_TABLE_NAME": {
+                        "DB_LONG_VIDEOS_TABLE_NAME": {
                             "Fn::Select": [
                                 "1",
                                 {

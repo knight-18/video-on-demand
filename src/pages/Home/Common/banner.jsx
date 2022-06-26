@@ -65,11 +65,11 @@ const Banner = ({ user }) => {
                   outline: "inherit",
                 }}
               >
-                Signout
+                Sign out
               </button>
             ) : (
               <a href="/signin" style={{ textDecoration: "none" }}>
-                Signin
+                Sign in
               </a>
             )}
           </li>
